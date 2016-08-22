@@ -1,0 +1,53 @@
+<html>
+<head>
+
+</head>
+<body >
+
+
+   <script type="text/javascript">
+        (function () {
+            "use strict";
+
+            var body = document.getElementsByTagName('body')[0];
+
+            var divFirst = me('div');
+            var userName = me('input');
+            userName.type = 'text';
+            divFirst.appendChild(userName);
+            body.appendChild(divFirst);
+
+            var divSecond = me('div');
+            var password = me('input');
+            password.type = 'password';
+            divSecond.appendChild(password);
+            body.appendChild(divSecond);
+            var divStatus = me('div');
+
+            var divThird = me('div');
+            var okay = me('input');
+            okay.type = 'button';
+            okay.value = 'Okay';
+            /*okay.onclick = function () {
+              if(userName.value == 'android' && password.value == 'android')
+                divStatus.innerHTML = 'User Valid';
+              else divStatus.innerHTML = 'User InValid';
+              body.appendChild(divStatus);
+            };*/
+            divThird.appendChild(okay);
+            body.appendChild(divThird);
+
+            function me(element){
+              return document.createElement(element);
+            }
+
+            okay.addEventListener('click', function () {
+              if(userName.value == 'android' && password.value == 'android')
+                divStatus.innerHTML = 'User Valid';
+              else divStatus.innerHTML = 'User InValid';
+              body.appendChild(divStatus);
+            });
+        })();
+   </script>
+</body>
+</html>

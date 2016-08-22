@@ -1,0 +1,66 @@
+<html>
+<head>
+
+</head>
+<body onload="callMeOnLoad()">
+ <script type="text/javascript">
+   function callMeOnLoad() {
+     var forObj = {
+       simple : function () {
+         var cities = ['Pune','Mumbai','Nagpur','Solapur','Kolhapur','Sangli'];
+
+         for(var i = 0; i< cities.length; i++)
+           console.log(""+cities[i]);
+       },
+       fancy : function () {
+         var cities = ['Pune','Mumbai','Nagpur','Solapur','Kolhapur','Sangli'];
+
+         var i = 0;
+         for(;i < cities.length;){
+
+          console.log(""+cities[i]);
+          i++;
+         }
+       },
+       forIn : function () {
+          var cities = {
+            name : 'pune',
+            institute : 'codekul',
+            distance : 2
+          };
+
+          for (var property in cities) {
+            if (cities.hasOwnProperty(property)) {
+              console.log('Key - '+property + ' Value - '+cities[property]);
+            }
+          }
+       },
+       arrays : function () {
+          var ds = [];
+          ds.push('Pune');
+          ds.push('Mumbai');
+          ds.push('Nagpur');
+          ds.push('Kolhapur');
+          ds.push('Sangli');
+
+          for (var i = 0; i < ds.length; i++) {
+            console.log(ds[i]);
+          }
+       },
+       forOfMy : function () {
+         var cities = ['Pune','Mumbai','Nagpur','Solapur','Kolhapur','Sangli'];
+         for (city of cities) console.log(city);
+       },
+       forEachMy : function () {
+          var cities = ['Pune','Mumbai','Nagpur','Solapur','Kolhapur','Sangli'];
+          cities.forEach(function (city,index) {
+            console.log('City'+city +' Index - '+index);
+          })
+       }
+     };
+
+     forObj.forEachMy();
+   }
+ </script>
+</body>
+</html>
