@@ -1,0 +1,29 @@
+<html>
+<head>
+
+</head>
+<body ng-app="MyAngApp">
+  <div ng-controller="MyController as ctrl">
+    <input type="button" value="Okay" ng-click="ctrl.click()"/>
+    {{ctrl.name}}
+    <ul ng-repeat="city in ctrl.cities">
+      <li>{{city}}</li>
+    </ul>
+  </div>
+
+  <div ng-controller="MyController as ctrl">
+    {{ctrl.click()}}
+    <ul ng-repeat="city in ctrl.cities">
+      <li>Second {{city}}</li>
+    </ul>
+  </div>
+
+  <div ng-controller="MyOtherController as ctrl">
+  </div>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+ <script src="factory.js" charset="utf-8"></script>
+ <script src="backend.js" charset="utf-8"></script>
+ <script src="app.js" charset="utf-8"></script>
+</body>
+</html>
