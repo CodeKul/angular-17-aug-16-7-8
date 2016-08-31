@@ -1,10 +1,8 @@
-angular.module('Backend',[])
-.factory('backendFactory',['$http',function backendFactory(ws) {
+angular.module('Backend',['Url'])
+.factory('backendFactory',['$http','urlFactory',function backendFactory(ws,url) {
   return {
-    call : function () {
-      ws.get('http://services.groupkt.com/country/get/all').then(function(res) {
-        console.log(res);
-      });
+    getMsg : function () {
+        return ws.get(url.msgUlr);
     }
-  }
+  };
 }]);

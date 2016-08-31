@@ -5,6 +5,10 @@ angular.module('MyAngApp',['MyOtherApp','Backend'])
     this.cities =fac.cities;
   }
 }])
-.controller('MyOtherController',['myFactory','backendFactory',function MyOtherController(fac,back) {
-    this.call = back.call();
+.controller('MyOtherController',['backendFactory',function MyOtherController(back) {
+    var vm = this;
+    back.getMsg().success(function (res) {
+      console.log('Server Res - '+res.RestResponse.messages[0]);
+      vm.messages = res.RestResponse.messages;
+    });
 }]);

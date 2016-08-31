@@ -19,9 +19,13 @@
   </div>
 
   <div ng-controller="MyOtherController as ctrl">
+    <ul ng-repeat="msg in ctrl.messages">
+      <li><a href="#">{{msg}}</a></li>
+    </ul>
   </div>
 
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+ <script src="url.js" charset="utf-8"></script>
  <script src="factory.js" charset="utf-8"></script>
  <script src="backend.js" charset="utf-8"></script>
  <script src="app.js" charset="utf-8"></script>
