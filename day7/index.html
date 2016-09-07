@@ -1,0 +1,36 @@
+<html>
+<head>
+
+</head>
+<body ng-app="MyApp">
+
+  <div ng-controller="MyController">
+    <br/> Name - {{name}}
+    <br/> City - {{city}}
+    <br/> User.Name - {{user.name}}
+    <br/> User.Mobile  - {{user.mobile}}
+    <br/> <input type="button" value="Okay" ng-click="click()">
+    <br/>{{click()}}
+  </div>
+
+  <div ng-controller="MyOtherController">
+    <br/> <input type="button" ng-click="show('okay')">
+     <br/> <input type="button" ng-click="show('good')">
+     {{status}}
+  </div>
+
+  <div ng-controller="InheritanceController">
+    <br/><input type="input" ng-model="os">
+    <div ng-controller="ChildController">
+      <br/> Os is - {{os}}
+      <input type="input" ng-model="version">
+      <br/> Version -  {{version}}
+      <br> <input type="button" ng-click="showVersion()">
+    </div>
+    <br/> Version -  {{version}}
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+<script src="app.js" charset="utf-8"></script>
+</body>
+</html>
